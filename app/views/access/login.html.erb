@@ -1,0 +1,30 @@
+<% @heading = "Welcome to the Rails Blog" %>
+<% @statement = "Login to add , edit your post" %>
+
+<%= form_for @user, :url => {:action => "attempt_login"} ,:html => {:class => "form-horizontal"} do |f| %>
+
+	<div class="form-group">
+		<%= f.label(:Email, :class => "col-sm-2 control-label") %>
+		<div class="col-sm-5">
+			<%= f.text_field(:email, :class => "form-control", :placeholder => "chuck@norris.com")%>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label(:Password, :class => "col-sm-2 control-label") %>
+		<div class="col-sm-5">
+			<%= f.password_field(:password, :class => "form-control", :placeholder => "*********")%>
+		</div>
+	</div>
+
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<%= f.submit(:class => "btn btn-primary ") %>
+		</div>
+	</div>
+<% end %>
+
+
+
+
