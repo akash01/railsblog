@@ -14,7 +14,7 @@ hr {
 	color: rgb(179, 114, 44);
 }
 
-.post{
+.formwrapper{
     box-shadow: 2px 2px 8px #aaa;
     -webkit-box-shadow: 2px 2px 8px #aaa;
     -moz-box-shadow: 2px 2px 8px #aaa;

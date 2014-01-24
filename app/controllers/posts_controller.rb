@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-  	@post = Contact.find(params[:id]).destroy
+  	@post = Post.find(params[:id]).destroy
   	redirect_to :back, :notice => "Deleted " + @post.title + " successfully" 
   end
 
@@ -53,8 +53,8 @@ class PostsController < ApplicationController
   	end
 
   	def post_params
-		if params[:post].present?
-			params.require(:post).permit(:title,:body,:user_id)
-		end
+  		if params[:post].present?
+  			params.require(:post).permit(:title,:body,:user_id)
+  		end
   	end
 end

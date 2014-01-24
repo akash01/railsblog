@@ -26,7 +26,7 @@
 	                <ul class="nav navbar-nav pull-right">
 	                    <li><a href="/">Home</a></li>
 	                    <li><a href="#">Login</a></li>
-	                    <li><a href="#">Signup</a></li>
+	                    <li><a href="<%= new_user_path() %>">Signup</a></li>
 	                </ul>
 	            </div>
 	        </nav> 
@@ -63,6 +63,15 @@
 	
 	<% if @post %>
 		<% @post.errors.full_messages.each do |error|%>
+			<script>
+			  var msg="<%= error %>";
+			  toastr.error(msg)
+			</script>
+		<% end %>
+	<% end %>
+
+	<% if @user %>
+		<% @user.errors.full_messages.each do |error|%>
 			<script>
 			  var msg="<%= error %>";
 			  toastr.error(msg)
