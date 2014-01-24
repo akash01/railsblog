@@ -1,0 +1,7 @@
+<section class="well">
+	<h3><p class=" sidebar-header label label-primary">Recent Posts</p></h3> <hr>
+	<% for post in posts %>
+		<a href="<%= post_path(post) %>"> <%= post.title %> by <%= post.author.firstname %> </br> Published on:
+		<%= post.created_at.strftime("%d.%m.%Y") %></a><hr>
+	<% end %>
+</section>

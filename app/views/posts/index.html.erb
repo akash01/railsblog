@@ -1,0 +1,15 @@
+<% @heading = "Welcome to the Rails Blog" %>
+<% @statement = "Publish and enjoy your article" %>
+
+<section class="col col-sm-9">
+	<div class="well">
+		<% for @post in @posts %>
+			<%= render partial: 'post', :locals => {:post => @post} %>
+			
+		<% end %>
+	</div>
+</section>
+
+<section class="col col-sm-3">
+	<%= render partial: 'sidebar', :locals => {:posts => @posts} %>
+</section>

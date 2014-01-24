@@ -1,0 +1,31 @@
+body {
+	padding: 70px;
+}
+
+h2, h3, p, th, tr, td {
+	text-align: center;
+}
+
+hr {
+	border: solid 1px rgb(180, 177, 177);
+}
+
+.pubdate {
+	color: rgb(179, 114, 44);
+}
+
+.post{
+    box-shadow: 2px 2px 8px #aaa;
+    -webkit-box-shadow: 2px 2px 8px #aaa;
+    -moz-box-shadow: 2px 2px 8px #aaa;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+textarea#post_body {
+    resize: none;
+    height: 20em;
+    max-height: 20em;
+    width: 69%;
+    max-width: 69%;
+}

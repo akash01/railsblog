@@ -1,14 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <title>Rails Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+    <section class="container">
+		<!-- row 1: navigation -->
+	    <div class="row">
+	        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+	            <div class="navbar-header">
+	            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse" >
+	                    <span class="src-only"></span>   
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <a href="/" class="navbar-brand">Rails Blog</a>
+	            </div> 
+	            <div class="collapse navbar-collapse" id="collapse">
+	                <ul class="nav navbar-nav pull-right">
+	                    <li><a href="/">Home</a></li>
+	                    <li><a href="#">Login</a></li>
+	                    <li><a href="#">Signup</a></li>
+	                </ul>
+	            </div>
+	        </nav> 
+	    </div> <!-- navigation -->
+
+	    <!-- jumbotron !-->
+	    <header class="row">
+	    	<div class="col col-sm-12">
+	    		<div class="jumbotron">
+	    			<h2><%= @heading %></h2>
+	    			<p><%= @statement %></p>
+	    		</div>
+	        </div>
+	    </header> <!-- header -->
+    
+	    <div id="main">
+			<%= yield %>
+		</div>
+	</section> <!-- container -->
+
+	<!-- footer -->
+	<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+	  <div class="container">
+			<p class="navbar-text pull-right muted credit">&copy; <a href="#" class="navbar-link">Mukesh <%= Time.now.year %></a></p>
+	  </div>
+	</nav>
+
+	<% flash.each do |name,message|%>
+		<script>
+		  var msg="<%= message %>";
+		  toastr.info(msg)
+		</script>
+	<% end %>
+	
+	<% if @post %>
+		<% @post.errors.full_messages.each do |error|%>
+			<script>
+			  var msg="<%= error %>";
+			  toastr.error(msg)
+			</script>
+		<% end %>
+	<% end %>
 
 </body>
 </html>

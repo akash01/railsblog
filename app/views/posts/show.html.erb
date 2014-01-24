@@ -1,0 +1,28 @@
+<% @heading = "Welcome to the Rails Blog" %>
+<% @statement = "Register to publish your own post" %>
+
+<section class="col col-sm-9">
+	<div class="well">
+		<div class="post table-bordered">
+			<legend><%= @post.title %></legend>
+			<div>
+				<span><%=  @post.body %></span>
+			</div>
+			<div class="pubdate">
+				<span>Published: <%= @post.created_at.strftime("%d.%m.%Y") %></span>
+			</div>
+			<div class="label label-info">
+				<span>by <%= @post.author.firstname %> <%= @post.author.lastname %></span>
+			</div>
+		</div>
+	</div>
+	<div>
+		<%= link_to "Back",root_path() %>
+	</div>
+</section>
+
+<section class="col col-sm-3">
+	<%= render partial: 'sidebar', :locals => {:posts => @posts} %>
+</section>
+
+

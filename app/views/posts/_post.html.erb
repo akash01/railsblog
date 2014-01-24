@@ -1,0 +1,16 @@
+<div class="post table-bordered">
+	<legend><a href="<%= post_path(post) %>"> <%= post.title %></a></legend>
+	<div>
+		<span><%= truncate( post.body, :length => 600) %></span>
+	</div>
+	<div class="pubdate">
+		<span>Published: <%= post.created_at.strftime("%d.%m.%Y") %></span>
+	</div>
+	<div class="label label-info">
+		<span>by <%= post.author.firstname %> <%= post.author.lastname %></span>
+	</div>
+	<div>
+		<%= link_to "Read the whole post",post_path(post) %>
+	</div>
+</div>
+<br>
