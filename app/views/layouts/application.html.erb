@@ -25,7 +25,7 @@
 	            <div class="collapse navbar-collapse" id="collapse">
 	                <ul class="nav navbar-nav pull-right">
 	                	<% if session[:user_id] %>
-	                		<li></li>
+	                		<li><a href="#">Hello, <%= session[:firstname] %></a></li>
 	                		<li><a href="/">Home</a></li>
 	                   		<li><a href="#">Profile</a></li>
 	                   		<li><a href="<%= new_post_path() %>">Add Post</a></li>

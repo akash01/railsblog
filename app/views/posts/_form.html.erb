@@ -1,5 +1,7 @@
 <%= form_for @post ,:html => {:class => "form-horizontal"} do |f| %>
-	
+		
+	<%= f.hidden_field(:user_id, {:value => session[:user_id] }) %>
+
 	<div class="form-group">
 		<%= f.label(:title, :class => "col-sm-2 control-label") %>
 		<div class="col-sm-7">

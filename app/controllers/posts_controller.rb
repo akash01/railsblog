@@ -45,7 +45,7 @@ class PostsController < ApplicationController
 
   private
   	def all_posts
-  		@posts = Post.sorted
+  		@posts = Post.newest_first
   	end
 
   	def find_post
