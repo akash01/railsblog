@@ -3,7 +3,7 @@
 <head>
   <title>Rails Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= stylesheet_link_tag  "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -24,9 +24,17 @@
 	            </div> 
 	            <div class="collapse navbar-collapse" id="collapse">
 	                <ul class="nav navbar-nav pull-right">
-	                    <li><a href="/">Home</a></li>
-	                    <li><a href="#">Login</a></li>
-	                    <li><a href="<%= new_user_path() %>">Signup</a></li>
+	                	<% if session[:user_id] %>
+	                		<li></li>
+	                		<li><a href="/">Home</a></li>
+	                   		<li><a href="#">Profile</a></li>
+	                   		<li><a href="<%= new_post_path() %>">Add Post</a></li>
+	                   		<li><a href="/access/logout">Logout</a></li>
+	                	<% else %>
+	                    	<li><a href="/">Home</a></li>
+	                    	<li><a href="/admin">Login</a></li>
+	                    	<li><a href="<%= new_user_path() %>">Signup</a></li>
+	                    <% end %>
 	                </ul>
 	            </div>
 	        </nav> 

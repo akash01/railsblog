@@ -6,6 +6,10 @@ Blog::Application.routes.draw do
   #resources :access
 
   get "admin", :to => "access#index"
+  
+  #match '/users', to: 'users#index',     via: 'get'
+  #match '/login', to: 'access#login',     via: 'get'
+  #match '/logout', to: 'access#destroy',     via: 'delete'
 
   match ':controller(/:action(:/id))', :via => [:get, :post ]
 

@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-  	@posts = Post.sorted
+  	#@posts = Post.sorted
+    @posts = Post.where(:user_id => @current_user.id )
   end
 
   def show
