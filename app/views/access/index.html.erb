@@ -1,3 +1,23 @@
-<%= render template: "users/index" %>
-<%= session['user_id'].inspect %>
-<%= @current_user.inspect %>
+<% if @current_user.role == 1 %>
+	<% @heading = " Hello Admin " +  session['firstname'] %>
+	<% @statement = "Your can manage users and posts" %>
+	<section class="well access-index">
+		<ul> <%=link_to "Profile" , edit_user_path(@current_user) %> </ul>
+		<hr>
+		<ul> <%=link_to "All Post", :controller => "posts", :action => "postslist" %> </ul>
+		<ul> <%=link_to "Add Post" , new_post_path %> </ul>
+		<hr>
+		<ul> <%=link_to "Add Users", new_user_path %> </ul>	
+		<ul> <%=link_to "Manage Users", users_path %> </ul>	
+	</section>
+<% else %>
+	<% @heading = " Hello " +  session['firstname'] %>
+	<% @statement = "Your can manage your profile and posts here." %>
+	<section class="well access-index">
+		<ul> <%=link_to "Profile" , edit_user_path(@current_user) %> </ul>
+		<hr>
+		<ul> <%=link_to "All Post", :controller => "posts", :action => "postslist" %> </ul>
+		<ul> <%=link_to "Add Post" , new_post_path %> </ul>
+	</section>
+<% end %>
+

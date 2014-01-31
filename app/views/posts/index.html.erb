@@ -8,8 +8,11 @@
 			
 		<% end %>
 	</div>
+
+	<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </section>
 
 <section class="col col-sm-3">
 	<%= render partial: 'sidebar', :locals => {:posts => @posts} %>
 </section>
+

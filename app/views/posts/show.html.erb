@@ -1,6 +1,10 @@
-<% @heading = "Welcome to the Rails Blog" %>
-<% @statement = "Register to publish your own post" %>
-
+<% if @current_user.present? %>
+	<% @heading = " Hello " +  session['firstname'] %>
+	<% @statement = "Your posts are here" %>
+<% else %>
+	<% @heading = "Welcome to the Rails Blog" %>
+	<% @statement = "Register to publish your own post" %>
+<% end %>
 <section class="col col-sm-9">
 	<div class="well">
 		<div class="formwrapper table-bordered">
@@ -17,7 +21,12 @@
 		</div>
 	</div>
 	<div>
-		<%= link_to_function "Back", "history.back()" %>
+		<% if @current_user.present? %>
+			
+			<%= link_to "Back", "/allposts" %>
+		<% else %>
+			<%= link_to "Back", posts_path %>
+		<% end %>
 	</div>
 </section>
 

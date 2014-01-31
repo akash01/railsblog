@@ -6,6 +6,9 @@ Blog::Application.routes.draw do
   #resources :access
 
   get "admin", :to => "access#index"
+  get "contact", :to => "users#contact"
+
+  get "allposts", :to => "posts#postslist"
   
   #match '/users', to: 'users#index',     via: 'get'
   #match '/login', to: 'access#login',     via: 'get'

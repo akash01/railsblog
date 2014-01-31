@@ -1,25 +1,28 @@
 <% @heading = " Hello " +  session['firstname'] %>
-<% @statement = "Your posts are here" %>
+<% @statement = "Users are here" %>
 <table class="table table-bordered table-striped table-condensed">
 	<thead>
 		<tr>
-			<th>Title</th>
-			<th>Author</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>Email</th>
+			<th>Role</th>
 			<th>Options</th>
 		</tr>
 	</thead>
 	<tbody>
-		<% for @post in @posts %>
+		<% for @user in @users %>
 			<tr>
-				<td> <%= @post.title %>	</td>
-				<td> <%= @post.author.firstname %></td>
-				
+				<td> <%= @user.firstname %>	</td>
+				<td> <%= @user.lastname %>	</td>
+				<td> <%= @user.email %>	</td>
+				<td> <%= @user.role == 1 ? "admin" : "user" %>	</td>
 				<td>
-					<%= link_to "Show",post_path(@post), :class => "btn btn-primary" %>
-					<%= link_to "Edit", edit_post_path(@post), :class => "btn btn-primary" %>
-					<%= link_to "Delete", @post, :method => 'delete', :confirm =>"Are you sure ypu want to delete " + @post.title + "?",:class => "btn btn-danger" %>
+					<%= link_to "Edit", edit_user_path(@user), :class => "btn btn-primary" %>
+					<%= link_to "Delete", @user, :method => 'delete', :confirm =>"Are you sure ypu want to delete " + @user.firstname + "?",:class => "btn btn-danger" %>
 				</td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
+

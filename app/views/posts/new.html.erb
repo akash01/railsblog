@@ -1,5 +1,5 @@
 <% @heading = "Welcome to the Rails Blog" %>
-<% @statement = "<p>Hello, <strong class='text-info'>Timo</strong>. You are a logged in. Create a post to share it.</p>" %>
+<% @statement = "Hello, " +  session['firstname'] + " You are a logged in. Create a post to share it." %>
 
 <div class="formwrapper">
 	<h4>Add Post:</h4>

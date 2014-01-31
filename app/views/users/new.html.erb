@@ -1,7 +1,12 @@
-<% @heading = "Register" %>
-<% @statement = "Hello Guest, Please register to post" %>
+<% if @current_user.present? %>
+	<% @heading = " Hello Admin" +  session['firstname'] %>
+	<% @statement = " Add new user." %>
+<% else %>
+	<% @heading = "Register" %>
+	<% @statement = "Hello Guest, Please register to post" %>
+<% end %>
 
 <div class="formwrapper">
-	<h4 class="text-center">Register:</h4>
+	<h4 class="text-center"></h4>
 	<%= render 'form' %>
 </div>

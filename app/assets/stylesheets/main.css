@@ -29,3 +29,10 @@ textarea#post_body {
     width: 69%;
     max-width: 69%;
 }
+
+.access-index {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+}

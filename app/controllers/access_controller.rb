@@ -4,7 +4,6 @@ class AccessController < ApplicationController
 	before_action :current_user
 
 	def index
-		@posts = Post.where(:user_id => @current_user.id )
 	end
 
 	def login
@@ -37,8 +36,6 @@ class AccessController < ApplicationController
 		redirect_to(:action => "login")
 	end
 
-	def current_user
-		@current_user ||= User.find_by_id(session[:user_id])
-	end
+	
 
 end
