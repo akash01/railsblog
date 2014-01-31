@@ -1,6 +1,6 @@
 == README
 
-This is simple blog application built with ruby on rails 4 and bootstrap 3
+This is simple blog application built with ruby on rails 4, bootstrap 3 and pagination support
 
 
 * Make sure u have ruby version 2 or above and rails version 4 or above

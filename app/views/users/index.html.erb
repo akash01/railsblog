@@ -19,7 +19,7 @@
 				<td> <%= @user.role == 1 ? "admin" : "user" %>	</td>
 				<td>
 					<%= link_to "Edit", edit_user_path(@user), :class => "btn btn-primary" %>
-					<%= link_to "Delete", @user, :method => 'delete', :confirm =>"Are you sure ypu want to delete " + @user.firstname + "?",:class => "btn btn-danger" %>
+					<%= link_to "Delete", @user, :method => 'delete', data: { confirm: "Are you sure you want to delete? " + @user.firstname + "?" }, :class => "btn btn-danger" %>
 				</td>
 			</tr>
 		<% end %>
