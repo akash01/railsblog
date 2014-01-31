@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is simple blog application built with ruby on rails 4 and bootstrap 3
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Make sure u have ruby version 2 or above and rails version 4 or above
+
+* Download the app
+
+* Change the database configuration in database.yml
+
+* Go to the root of the app folder and run rake db:migrate
+
+* Now run rails s, the app should be up and running at localhost:3000
