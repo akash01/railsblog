@@ -12,3 +12,5 @@ This is simple blog application built with ruby on rails 4, bootstrap 3 and pagi
 * Go to the root of the app folder and run rake db:migrate
 
 * Now run rails s, the app should be up and running at localhost:3000
+
+* Demo at http://rails4-blog.herokuapp.com/
