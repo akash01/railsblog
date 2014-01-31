@@ -39,6 +39,10 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 
+group :development do
+  gem "rails-erd"
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
